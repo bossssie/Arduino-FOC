@@ -17,6 +17,7 @@
 
 #include "Arduino.h"
 #include <hardware/pwm.h>
+#include "../hardware_api.h"
 
 
 typedef struct RP2040DriverParams {
