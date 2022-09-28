@@ -2,7 +2,7 @@
 /**
  * Support for the RP2040 MCU, as found on the Raspberry Pi Pico.
  */
-#if defined(TARGET_RP2040)
+
 
 #define SIMPLEFOC_DEBUG_RP2040
 
@@ -16,7 +16,7 @@
 #endif
 
 #include "Arduino.h"
-
+#include <hardware/pwm.h>
 
 
 typedef struct RP2040DriverParams {
@@ -180,5 +180,3 @@ void _writeDutyCycle6PWM(float dc_a,  float dc_b, float dc_c, void* params) {
 	writeDutyCycle(dc_c, ((RP2040DriverParams*)params)->slice[4], ((RP2040DriverParams*)params)->chan[4]);
 	writeDutyCycle(swDti(dc_c, ((RP2040DriverParams*)params)->dead_zone), ((RP2040DriverParams*)params)->slice[5], ((RP2040DriverParams*)params)->chan[5]);
 }
-
-#endif
